@@ -1,270 +1,36 @@
-/* FONT IMPORT */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Condensed:wght@700&display=swap");
 
-/* PALETTE CDM STUDIO */
 :root {
+  --cdm-bg: #f7f8f9;
+  --cdm-text: #1a1a1a;
+  --cdm-muted: #6d6d6d;
   --cdm-teal: #2a9d8f;
-  --cdm-gray-900: #2b2b2b;
-  --cdm-gray-600: #6e6e6e;
-  --cdm-gray-200: #e5e5e5;
-  --cdm-bg: #fafafa;
-  --cdm-white: #ffffff;
-  --cdm-red: #c62828;
-}
+  --cdm-red: #d62828;
+  --cdm-light: #e6f4f1;
+  --cdm-border: #e0e0e0;
 
-/* RESET BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  min-height: 100%;
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Roboto Condensed", sans-serif;
 }
 
 body {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.6;
-  color: var(--cdm-gray-900);
   background: var(--cdm-bg);
+  color: var(--cdm-text);
+  font-family: var(--font-body);
+  padding: 0 1.5rem;
 }
 
-/* LAYOUT GENERALE */
-.cdm-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
 }
 
-.cdm-shell {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-
-.cdm-main {
-  padding: 2.5rem 0 3rem;
-}
-
-/* NAV + HERO */
-.cdm-hero {
-  background: var(--cdm-white);
-  border-bottom: 1px solid var(--cdm-gray-200);
-  padding: 1.25rem 0 2.75rem;
-}
-
-.cdm-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.75rem;
-}
-
-.cdm-logo {
-  font-family: "Roboto Condensed", system-ui, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-.cdm-nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.9rem;
-}
-
-.cdm-nav-links a {
-  text-decoration: none;
-  color: var(--cdm-gray-600);
-}
-
-.cdm-nav-links a:hover {
-  color: var(--cdm-gray-900);
-}
-
-.cdm-hero-content {
-  max-width: 720px;
-}
-
-.cdm-kicker {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--cdm-gray-600);
-  margin-bottom: 0.6rem;
-}
-
-.cdm-hero h1 {
-  font-family: "Roboto Condensed", system-ui, sans-serif;
-  font-size: clamp(2rem, 3.2vw, 2.4rem);
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
-  color: var(--cdm-gray-900);
-}
-
-.cdm-hero-line {
-  font-size: 0.98rem;
-  color: var(--cdm-gray-600);
-  margin-bottom: 0.4rem;
-}
-
-.cdm-hero-line-strong {
-  font-weight: 600;
-  color: var(--cdm-red);
-}
-
-.cdm-hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.4rem;
-}
-
-/* BOTTONI */
-.cdm-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.55rem 1.25rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  border: 1px solid transparent;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-}
-
-.cdm-btn-primary {
-  background: var(--cdm-gray-900);
-  color: var(--cdm-white);
-}
-
-.cdm-btn-primary:hover {
-  background: #000000;
-}
-
-.cdm-btn-secondary {
-  background: var(--cdm-white);
-  color: var(--cdm-gray-900);
-  border-color: var(--cdm-gray-200);
-}
-
-.cdm-btn-secondary:hover {
-  background: #f3f3f3;
-}
-
-/* SEZIONI */
-.cdm-section {
-  padding: 2.5rem 0;
-}
-
-.cdm-section-alt {
-  background: var(--cdm-bg);
-  border-top: 1px solid var(--cdm-gray-200);
-  border-bottom: 1px solid var(--cdm-gray-200);
-}
-
-.cdm-section h2 {
-  font-family: "Roboto Condensed", system-ui, sans-serif;
-  font-size: 1.4rem;
-  margin-bottom: 1.25rem;
-}
-
-/* GRID PRODUZIONI */
-.cdm-grid {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.cdm-card {
-  background: var(--cdm-white);
-  border-radius: 0.9rem;
-  padding: 1.2rem 1.4rem;
-  border: 1px solid var(--cdm-gray-200);
-}
-
-.cdm-card h3 {
-  font-family: "Roboto Condensed", system-ui, sans-serif;
-  font-size: 1.05rem;
-  margin-bottom: 0.4rem;
-}
-
-.cdm-card p {
-  font-size: 0.95rem;
-  color: var(--cdm-gray-600);
-}
-
-.cdm-extra {
-  margin-top: 0.45rem;
-}
-
-/* TESTO GENERICO */
-.cdm-text-block {
-  display: grid;
-  gap: 0.8rem;
-  font-size: 0.97rem;
-  color: var(--cdm-gray-600);
-}
-
-.cdm-text-block strong {
-  color: var(--cdm-gray-900);
-}
-
-/* LINK GENERICI */
 a {
   color: var(--cdm-teal);
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-}
-
-/* FOOTER */
-.cdm-footer {
-  margin-top: auto;
-  border-top: 1px solid var(--cdm-gray-200);
-  background: var(--cdm-white);
-  padding: 1.75rem 0;
-  font-size: 0.85rem;
-  color: var(--cdm-gray-600);
-}
-
-.cdm-footer-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-/* RESPONSIVE */
-@media (min-width: 768px) {
-  .cdm-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .cdm-footer-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .cdm-nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .cdm-hero {
-    padding-top: 1rem;
-  }
-
-  .cdm-hero-cta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
